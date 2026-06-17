@@ -1,0 +1,247 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body,div,p,span,a{font-family:'Noto Sans KR',-apple-system,sans-serif}
+.wrap{max-width:480px;margin:0 auto;background:#f9f9f9}
+.hero{text-align:center;padding:2.8rem 1.5rem 2rem;background:#fff;border-bottom:2px solid #7a1530}
+.hero-kicker{font-size:12px;letter-spacing:0.16em;color:#7a1530;text-transform:uppercase;margin-bottom:10px;font-weight:600}
+.hero-name{font-size:22px;font-weight:700;color:#1a1a1a;margin-bottom:10px}
+.hero-msg{font-size:13px;color:#444;line-height:1.9;max-width:320px;margin:0 auto}
+.hero-brand{font-size:11px;color:#999;margin-top:8px;letter-spacing:0.04em}
+.acc-list{padding:1.25rem 1rem}
+.acc-item{border:1px solid #ddd;border-radius:12px;margin-bottom:12px;overflow:hidden;background:#fff}
+.acc-head{display:flex;align-items:center;gap:12px;padding:16px;cursor:pointer;background:#fff;transition:background 0.15s}
+.acc-head:hover{background:#fdf5f6}
+.acc-icon{width:38px;height:38px;border-radius:10px;background:#f5eaec;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.acc-icon i{font-size:18px;color:#7a1530}
+.acc-head-text{flex:1}
+.acc-head-title{font-size:15px;font-weight:700;color:#1a1a1a}
+.acc-head-sub{font-size:12px;color:#999;margin-top:2px}
+.acc-chevron{font-size:15px;color:#ccc;transition:transform 0.22s}
+.acc-body{display:none;border-top:1px solid #eee;padding:18px;background:#fff}
+.acc-item.open .acc-body{display:block}
+.acc-item.open .acc-chevron{transform:rotate(180deg)}
+.sec-title{font-size:13px;font-weight:700;color:#7a1530;margin:18px 0 10px;display:flex;align-items:center;gap:6px}
+.sec-title:first-child{margin-top:0}
+.sec-title i{font-size:15px}
+.deadline-box{background:#fdf5f6;border-left:3px solid #7a1530;border-radius:0 10px 10px 0;padding:12px 14px}
+.deadline-main{font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:6px;line-height:1.7}
+.deadline-sub{font-size:13px;color:#555;line-height:1.9}
+.checklist{display:flex;flex-direction:column;gap:10px}
+.check-item{display:flex;gap:10px;align-items:flex-start}
+.check-num{width:22px;height:22px;border-radius:50%;background:#7a1530;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;margin-top:2px}
+.check-content{flex:1;min-width:0}
+.check-content strong{font-size:13px;font-weight:700;color:#1a1a1a;display:block;line-height:1.7}
+.sub-list{margin-top:5px;display:flex;flex-direction:column;gap:3px}
+.sub-item{font-size:12px;color:#555;line-height:1.7;padding-left:12px;position:relative}
+.sub-item::before{content:"—";position:absolute;left:0;color:#999}
+.file-btn{display:flex;align-items:center;gap:10px;padding:12px 14px;background:#fdf5f6;border:1px solid #e8c0c8;border-radius:10px;text-decoration:none;margin-top:10px}
+.file-btn i{font-size:17px;color:#7a1530;flex-shrink:0}
+.file-btn-text{font-size:13px;font-weight:700;color:#1a1a1a}
+.file-btn-sub{font-size:11px;color:#888;margin-top:2px}
+.file-btn-arrow{font-size:14px;color:#bbb;margin-left:auto}
+.note-list{display:flex;flex-direction:column;gap:8px}
+.note-item{font-size:13px;color:#444;line-height:1.8;padding-left:18px;position:relative}
+.note-item::before{content:"✔";position:absolute;left:0;color:#7a1530;font-size:12px}
+.red{color:#c0392b;font-weight:700}
+.supply-box{background:#fafafa;border-radius:10px;padding:14px}
+.supply-row{display:flex;align-items:center;gap:6px;margin-bottom:6px}
+.supply-star{font-size:18px}
+.supply-items{display:flex;gap:8px}
+.supply-item{font-size:14px;font-weight:700;color:#1a1a1a;text-decoration:underline;text-underline-offset:3px}
+.supply-note{font-size:13px;color:#666;line-height:1.7;margin-top:6px}
+.divider{height:1px;background:#f0f0f0;margin:16px 0}
+.event-box{background:#fff;border:2px solid #7a1530;border-radius:12px;padding:16px;text-align:center}
+.event-icon{font-size:36px;margin-bottom:8px}
+.event-title{font-size:15px;font-weight:700;color:#7a1530;margin-bottom:6px}
+.event-desc{font-size:13px;color:#444;line-height:1.9}
+.yellow-ul{text-decoration:underline;text-decoration-color:#f5c842;text-underline-offset:3px;font-weight:700;color:#1a1a1a}
+</style>
+
+<div class="wrap">
+  <div class="hero">
+    <p class="hero-kicker">Arte Speech</p>
+    <p class="hero-name">단기속성과정 과제 안내</p>
+    <p class="hero-msg">수업 사전 과제입니다. 담당 강사가 미리 검토하여 1:1 맞춤 수업에 반영합니다.</p>
+    <p class="hero-brand">스피치/면접 대표 브랜드, ARTE SPEECH가 함께 합니다.</p>
+  </div>
+
+  <div class="acc-list">
+
+    <div class="acc-item">
+      <div class="acc-head" onclick="toggle(this)">
+        <div class="acc-icon"><i class="ti ti-briefcase" aria-hidden="true"></i></div>
+        <div class="acc-head-text">
+          <p class="acc-head-title">단기속성과정</p>
+          <p class="acc-head-sub">기업 면접 · 단기 집중</p>
+        </div>
+        <i class="ti ti-chevron-down acc-chevron" aria-hidden="true"></i>
+      </div>
+      <div class="acc-body">
+        <p class="sec-title"><i class="ti ti-clock" aria-hidden="true"></i>자료 제출 기한</p>
+        <div class="deadline-box">
+          <p class="deadline-main">수업 이틀 전 <span class="yellow-ul">오후 9시까지 메일</span>로 보내주세요!</p>
+          <p class="deadline-sub">예) 15일 수업 → 13일 저녁 9시까지<br>당일·하루 전 예약 시 → 당일 밤 또는 수업 4시간 전까지<br>이메일 또는 학원 카톡</p>
+        </div>
+        <div class="divider"></div>
+        <p class="sec-title"><i class="ti ti-paperclip" aria-hidden="true"></i>첨부 자료 (메일 제목: 본인 이름 · hwp 파일)</p>
+        <div class="checklist">
+          <div class="check-item">
+            <div class="check-num">1</div>
+            <div class="check-content">
+              <strong>이력서 + 자기소개서</strong>
+              <span style="font-size:12px;color:#888;display:block">채용 서류 미제출 시 별도 제출 불필요</span>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-num">2</div>
+            <div class="check-content">
+              <strong>채용공고문 또는 면접전형 안내문</strong>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-num">3</div>
+            <div class="check-content">
+              <strong>필수 발언 — 아래 파일 다운로드 받아주세요!</strong>
+              <a class="file-btn" href="#" target="_blank">
+                <i class="ti ti-download" aria-hidden="true"></i>
+                <div>
+                  <p class="file-btn-text">필수질문 가이드라인 다운로드</p>
+                  <p class="file-btn-sub">hwp · docx</p>
+                </div>
+                <i class="ti ti-external-link file-btn-arrow" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-num">4</div>
+            <div class="check-content">
+              <strong>예상질문과 답변</strong>
+              <div class="sub-list">
+                <p class="sub-item">해당 기업과 직무의 기출 or 예상질문에 대해 아는 만큼 답변 작성</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <p class="sec-title"><i class="ti ti-info-circle" aria-hidden="true"></i>유의사항</p>
+        <div class="note-list">
+          <p class="note-item">③, ④번은 가능한 범위까지만 작성해 주셔도 됩니다.</p>
+          <p class="note-item">수업 중 피드백과 과제는 꼭 스스로 체크해 주세요. 수업 후 별도 안내는 어렵습니다 🙏🏻</p>
+          <p class="note-item">두 번째 수업부터는 담당 강사 메일로 제출해 주세요.<br><span class="red">다음 수업 전날 오후 6시까지</span><br><span style="font-size:12px;color:#666">예) 수요일 수업 → 화요일 오후 6시까지</span><br><span style="font-size:12px;color:#666">바로 다음날이 수업인 경우 → 강사님이 정해준 기한 내 제출</span></p>
+        </div>
+        <div class="divider"></div>
+        <p class="sec-title"><i class="ti ti-device-laptop" aria-hidden="true"></i>수업 준비물</p>
+        <div class="supply-box">
+          <div class="supply-row">
+            <span class="supply-star">⭐</span>
+            <div class="supply-items">
+              <span class="supply-item">노트북</span>
+              <span class="supply-item">패드</span>
+              <span class="supply-item">필기구</span>
+            </div>
+          </div>
+          <p class="supply-note">셋 중 하나를 꼭 지참해 주세요.<br>가능하시면 노트북이나 패드를 추천드립니다 😊</p>
+        </div>
+        <div class="divider"></div>
+        <p class="sec-title"><i class="ti ti-gift" aria-hidden="true"></i>아르떼 이벤트</p>
+        <div class="event-box">
+          <div class="event-icon">☕</div>
+          <p class="event-title">합격하셨나요? 축하드려요! 🎉</p>
+          <p class="event-desc">학원으로 카톡 주시면<br>커피 교환권을 선물로 보내드려요!<br><span style="font-size:12px;color:#999">(합격 인증 사진 함께 첨부)</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="acc-item">
+      <div class="acc-head" onclick="toggle(this)">
+        <div class="acc-icon"><i class="ti ti-award" aria-hidden="true"></i></div>
+        <div class="acc-head-text">
+          <p class="acc-head-title">승진면접</p>
+          <p class="acc-head-sub">공무원 · 기업 승진</p>
+        </div>
+        <i class="ti ti-chevron-down acc-chevron" aria-hidden="true"></i>
+      </div>
+      <div class="acc-body">
+        <p class="sec-title"><i class="ti ti-clock" aria-hidden="true"></i>자료 제출 기한</p>
+        <div class="deadline-box">
+          <p class="deadline-main">수업 이틀 전 <span class="yellow-ul">오후 9시까지 메일</span>로 보내주세요!</p>
+          <p class="deadline-sub">예) 15일 수업 → 13일 저녁 9시까지<br>당일·하루 전 예약 시 → 당일 밤 또는 수업 4시간 전까지<br>이메일 또는 학원 카톡</p>
+        </div>
+        <div class="divider"></div>
+        <p class="sec-title"><i class="ti ti-paperclip" aria-hidden="true"></i>첨부 자료 (메일 제목: 본인 이름 · hwp 파일)</p>
+        <div class="checklist">
+          <div class="check-item">
+            <div class="check-num">1</div>
+            <div class="check-content">
+              <strong>면접 전형 안내문</strong>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-num">2</div>
+            <div class="check-content">
+              <strong>제출 서류</strong>
+              <div class="sub-list">
+                <p class="sub-item">실적서 면접 → 실적서 제출</p>
+                <p class="sub-item">PT면접 → PPT 제출</p>
+                <p class="sub-item">그 외 제출 서류</p>
+              </div>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-num">3</div>
+            <div class="check-content">
+              <strong>인성 면접 — 1분 자기소개 · 장단점 · 지원동기 답변</strong>
+            </div>
+          </div>
+          <div class="check-item">
+            <div class="check-num">4</div>
+            <div class="check-content">
+              <strong>답변 스크립트</strong>
+              <div class="sub-list">
+                <p class="sub-item">이전에 동일 면접을 보신 분<br>: 이전 면접 질문 + 현재 기준 답변</p>
+                <p class="sub-item">이전 동일 면접 경험이 없으신 분<br>: 예상 질문 + 답변</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="divider"></div>
+        <p class="sec-title"><i class="ti ti-info-circle" aria-hidden="true"></i>유의사항</p>
+        <div class="note-list">
+          <p class="note-item">③, ④번은 가능한 범위까지만 작성해 주셔도 됩니다.</p>
+          <p class="note-item">수업 중 피드백과 과제는 꼭 스스로 체크해 주세요. 수업 후 별도 안내는 어렵습니다 🙏🏻</p>
+          <p class="note-item">두 번째 수업부터는 담당 강사 메일로 제출해 주세요.<br><span class="red">다음 수업 전날 오후 6시까지</span><br><span style="font-size:12px;color:#666">예) 수요일 수업 → 화요일 오후 6시까지</span><br><span style="font-size:12px;color:#666">바로 다음날이 수업인 경우 → 강사님이 정해준 기한 내 제출</span></p>
+        </div>
+        <div class="divider"></div>
+        <p class="sec-title"><i class="ti ti-device-laptop" aria-hidden="true"></i>수업 준비물</p>
+        <div class="supply-box">
+          <div class="supply-row">
+            <span class="supply-star">⭐</span>
+            <div class="supply-items">
+              <span class="supply-item">노트북</span>
+              <span class="supply-item">패드</span>
+              <span class="supply-item">필기구</span>
+            </div>
+          </div>
+          <p class="supply-note">셋 중 하나를 꼭 지참해 주세요.<br>가능하시면 노트북이나 패드를 추천드립니다 😊</p>
+        </div>
+        <div class="divider"></div>
+        <p class="sec-title"><i class="ti ti-gift" aria-hidden="true"></i>아르떼 이벤트</p>
+        <div class="event-box">
+          <div class="event-icon">☕</div>
+          <p class="event-title">합격하셨나요? 축하드려요! 🎉</p>
+          <p class="event-desc">학원으로 카톡 주시면<br>커피 교환권을 선물로 보내드려요!<br><span style="font-size:12px;color:#999">(합격 인증 사진 함께 첨부)</span></p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function toggle(head){
+  var item=head.closest('.acc-item');
+  item.classList.toggle('open');
+}
+</script>
